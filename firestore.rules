@@ -1,0 +1,55 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: is the request coming from an authenticated admin?
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // settings/profile and settings/app — public read, admin write
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Portfolio content collections — public can read only visible items,
+    // only authenticated admins can create/update/delete.
+    match /education/{docId} {
+      allow read: if resource.data.visible == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /skills/{docId} {
+      allow read: if resource.data.visible == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /projects/{docId} {
+      allow read: if resource.data.visible == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /certifications/{docId} {
+      allow read: if resource.data.visible == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Contact messages — anyone can create (submit the contact form),
+    // but only admins can read, update (mark as read), or delete.
+    match /messages/{docId} {
+      allow create: if request.resource.data.keys().hasAll(['name', 'email', 'subject', 'message'])
+                    && request.resource.data.name is string
+                    && request.resource.data.email is string
+                    && request.resource.data.subject is string
+                    && request.resource.data.message is string;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Deny everything else by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
