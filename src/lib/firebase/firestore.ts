@@ -69,8 +69,11 @@ export async function saveProfile(data: Partial<Profile>): Promise<void> {
 }
 
 // Education
-export async function getEducation(): Promise<(Education & { id: string })[]> {
-  return getCollection<Education>("education", [orderBy("order", "asc")]);
+export async function getEducation(visibleOnly = false): Promise<(Education & { id: string })[]> {
+  const constraints: QueryConstraint[] = [];
+  if (visibleOnly) constraints.push(where("visible", "==", true));
+  constraints.push(orderBy("order", "asc"));
+  return getCollection<Education>("education", constraints);
 }
 
 export async function addEducation(data: Omit<Education, "id">): Promise<string> {
@@ -91,8 +94,11 @@ export async function deleteEducation(id: string): Promise<void> {
 }
 
 // Skills
-export async function getSkills(): Promise<(Skill & { id: string })[]> {
-  return getCollection<Skill>("skills", [orderBy("order", "asc")]);
+export async function getSkills(visibleOnly = false): Promise<(Skill & { id: string })[]> {
+  const constraints: QueryConstraint[] = [];
+  if (visibleOnly) constraints.push(where("visible", "==", true));
+  constraints.push(orderBy("order", "asc"));
+  return getCollection<Skill>("skills", constraints);
 }
 
 export async function addSkill(data: Omit<Skill, "id">): Promise<string> {
@@ -114,8 +120,9 @@ export async function deleteSkill(id: string): Promise<void> {
 
 // Projects
 export async function getProjects(visibleOnly = false): Promise<(Project & { id: string })[]> {
-  const constraints: QueryConstraint[] = [orderBy("order", "asc")];
+  const constraints: QueryConstraint[] = [];
   if (visibleOnly) constraints.push(where("visible", "==", true));
+  constraints.push(orderBy("order", "asc"));
   return getCollection<Project>("projects", constraints);
 }
 
@@ -142,8 +149,9 @@ export async function deleteProject(id: string): Promise<void> {
 
 // Certifications
 export async function getCertifications(visibleOnly = false): Promise<(Certification & { id: string })[]> {
-  const constraints: QueryConstraint[] = [orderBy("order", "asc")];
+  const constraints: QueryConstraint[] = [];
   if (visibleOnly) constraints.push(where("visible", "==", true));
+  constraints.push(orderBy("order", "asc"));
   return getCollection<Certification>("certifications", constraints);
 }
 

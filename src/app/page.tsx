@@ -11,11 +11,11 @@ export const revalidate = 0;
 export default async function HomePage() {
   const [profile, education, skills] = await Promise.all([
     getProfile().catch(() => null),
-    getEducation().catch(() => []),
-    getSkills().catch(() => []),
+    getEducation(true).catch(() => []),
+    getSkills(true).catch(() => []),
   ]);
 
-  // Filter visible items - treat undefined visible as false (not visible by default)
+  // Already filtered by visibility on the database level, but add extra safety check
   const visibleEducation = education.filter((e) => e.visible === true);
   const visibleSkills = skills.filter((s) => s.visible === true);
 
@@ -25,6 +25,7 @@ export default async function HomePage() {
     skills: skills.length,
     visibleSkills: visibleSkills.length,
     educationSample: education[0],
+    skillsSample: skills[0],
   });
 
   return (
