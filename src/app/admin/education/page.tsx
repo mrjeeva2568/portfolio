@@ -27,7 +27,7 @@ import {
   addEducation,
   updateEducation,
   deleteEducation,
-} from "@/lib/firebase/firestore";
+} from "@/lib/supabase/database";
 import type { Education } from "@/types";
 import { toast } from "sonner";
 

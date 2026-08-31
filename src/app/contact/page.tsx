@@ -2,7 +2,7 @@ import { Navbar } from "@/components/portfolio/navbar";
 import { Footer } from "@/components/portfolio/footer";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { ContactForm } from "@/components/portfolio/contact-form";
-import { getProfile } from "@/lib/firebase/firestore";
+import { getProfile } from "@/lib/supabase/database";
 import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/shared/brand-icons";
 import type { Metadata } from "next";

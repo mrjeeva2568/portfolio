@@ -3,7 +3,7 @@ import { Footer } from "@/components/portfolio/footer";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { CertificationCard } from "@/components/portfolio/certification-card";
 import { EmptyState } from "@/components/shared/empty-state";
-import { getProfile, getCertifications } from "@/lib/firebase/firestore";
+import { getProfile, getCertifications } from "@/lib/supabase/database";
 import { Award } from "lucide-react";
 import type { Metadata } from "next";
 

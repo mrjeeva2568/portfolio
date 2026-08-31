@@ -1,4 +1,4 @@
-import { Timestamp } from "firebase/firestore";
+export type DateLike = string | Date;
 
 export interface Profile {
   id?: string;
@@ -17,7 +17,7 @@ export interface Profile {
   seoTitle?: string;
   seoDescription?: string;
   portfolioStatus: "published" | "draft";
-  updatedAt?: Timestamp;
+  updatedAt?: DateLike;
 }
 
 export interface SocialLink {
@@ -39,8 +39,8 @@ export interface Education {
   description?: string;
   visible: boolean;
   order: number;
-  createdAt?: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt?: DateLike;
+  updatedAt?: DateLike;
 }
 
 export interface Skill {
@@ -50,8 +50,8 @@ export interface Skill {
   level?: number; // 1-5
   visible: boolean;
   order: number;
-  createdAt?: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt?: DateLike;
+  updatedAt?: DateLike;
 }
 
 export interface Project {
@@ -70,8 +70,8 @@ export interface Project {
   order: number;
   startDate?: string;
   endDate?: string;
-  createdAt?: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt?: DateLike;
+  updatedAt?: DateLike;
 }
 
 export interface Certification {
@@ -85,8 +85,8 @@ export interface Certification {
   imageUrl?: string;
   visible: boolean;
   order: number;
-  createdAt?: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt?: DateLike;
+  updatedAt?: DateLike;
 }
 
 export interface ContactMessage {
@@ -96,7 +96,7 @@ export interface ContactMessage {
   subject: string;
   message: string;
   read: boolean;
-  createdAt?: Timestamp;
+  createdAt?: DateLike;
 }
 
 export interface Settings {

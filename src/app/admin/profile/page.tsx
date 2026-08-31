@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { FileUploader } from "@/components/shared/file-uploader";
 import { LoadingPage, LoadingSpinner } from "@/components/shared/loading-spinner";
 import { profileSchema, type ProfileFormData } from "@/lib/validations";
-import { getProfile, saveProfile } from "@/lib/firebase/firestore";
+import { getProfile, saveProfile } from "@/lib/supabase/database";
 import { toast } from "sonner";
 
 export default function AdminProfilePage() {

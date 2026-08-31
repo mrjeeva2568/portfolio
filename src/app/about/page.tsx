@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/portfolio/navbar";
 import { Footer } from "@/components/portfolio/footer";
 import { SectionHeading } from "@/components/portfolio/section-heading";
-import { getProfile } from "@/lib/firebase/firestore";
+import { getProfile } from "@/lib/supabase/database";
 import type { Metadata } from "next";
 
 export const revalidate = 0;

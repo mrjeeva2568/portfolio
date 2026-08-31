@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileUploader } from "@/components/shared/file-uploader";
 import { LoadingPage } from "@/components/shared/loading-spinner";
-import { getProfile, saveProfile } from "@/lib/firebase/firestore";
+import { getProfile, saveProfile } from "@/lib/supabase/database";
 import { toast } from "sonner";
 
 export default function AdminResumePage() {

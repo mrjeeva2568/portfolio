@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AdminLayoutShell } from "@/components/admin/admin-layout-shell";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { checkFirebaseHealth } from "@/lib/firebase/health-check";
+import { checkSupabaseHealth } from "@/lib/supabase/health-check";
 import { useAuth } from "@/lib/auth/context";
 
 export default function AdminDiagnosticsPage() {
@@ -14,7 +14,7 @@ export default function AdminDiagnosticsPage() {
 
   const runDiagnostics = async () => {
     setChecking(true);
-    const result = await checkFirebaseHealth();
+    const result = await checkSupabaseHealth();
     setResults(result);
     setChecking(false);
   };
@@ -30,14 +30,14 @@ export default function AdminDiagnosticsPage() {
             <div className="rounded-lg bg-slate-50 p-4 font-mono text-sm dark:bg-slate-900">
               <div>Loading: {loading ? "true" : "false"}</div>
               <div>User Email: {user?.email || "Not authenticated"}</div>
-              <div>User ID: {user?.uid || "N/A"}</div>
+              <div>User ID: {user?.id || "N/A"}</div>
             </div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Firebase Connection Test</CardTitle>
+            <CardTitle>Supabase Connection Test</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <Button onClick={runDiagnostics} disabled={checking}>
@@ -52,7 +52,7 @@ export default function AdminDiagnosticsPage() {
               }`}>
                 <div>Status: {results.success ? "✅ Connected" : "❌ Failed"}</div>
                 <div>Auth: {results.auth ? "✅" : "❌"}</div>
-                <div>Firestore: {results.firestoreConnected ? "✅" : "❌"}</div>
+                <div>Database: {results.databaseConnected ? "✅" : "❌"}</div>
                 {results.error && <div className="mt-2 text-red-600 dark:text-red-400">Error: {results.error}</div>}
                 {results.userEmail && <div className="mt-2">Email: {results.userEmail}</div>}
               </div>

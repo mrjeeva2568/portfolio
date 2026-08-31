@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { LoadingSpinner } from "@/components/shared/loading-spinner";
 import { contactSchema, type ContactFormData } from "@/lib/validations";
-import { addMessage } from "@/lib/firebase/firestore";
+import { addMessage } from "@/lib/supabase/database";
 import { toast } from "sonner";
 
 export function ContactForm() {

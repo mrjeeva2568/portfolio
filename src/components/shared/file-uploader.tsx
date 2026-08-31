@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Upload, X, FileText, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LoadingSpinner } from "./loading-spinner";
-import { uploadFile, generatePath, deleteFile } from "@/lib/firebase/storage";
+import { uploadFile, generatePath, deleteFile } from "@/lib/supabase/storage";
 import { validateFileType, validateFileSize, ALLOWED_IMAGE_TYPES, MAX_IMAGE_SIZE, MAX_RESUME_SIZE } from "@/lib/utils";
 import { toast } from "sonner";
 

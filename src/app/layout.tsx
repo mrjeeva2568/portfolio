@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Developer Portfolio",
-  description: "A professional developer portfolio built with Next.js and Firebase.",
+  description: "A professional developer portfolio built with Next.js and Supabase.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -3,7 +3,7 @@ import { Footer } from "@/components/portfolio/footer";
 import { SectionHeading } from "@/components/portfolio/section-heading";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { EmptyState } from "@/components/shared/empty-state";
-import { getProfile, getProjects } from "@/lib/firebase/firestore";
+import { getProfile, getProjects } from "@/lib/supabase/database";
 import { FolderKanban } from "lucide-react";
 import type { Metadata } from "next";
 

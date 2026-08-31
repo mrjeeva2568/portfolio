@@ -4,7 +4,7 @@ import { Hero } from "@/components/portfolio/hero";
 import { About } from "@/components/portfolio/about";
 import { EducationSection } from "@/components/portfolio/education-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
-import { getProfile, getEducation, getSkills } from "@/lib/firebase/firestore";
+import { getProfile, getEducation, getSkills } from "@/lib/supabase/database";
 
 export const revalidate = 0;
 

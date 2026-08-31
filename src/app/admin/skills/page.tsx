@@ -22,7 +22,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { LoadingPage, LoadingSpinner } from "@/components/shared/loading-spinner";
 import { ErrorState } from "@/components/shared/error-state";
 import { skillSchema, type SkillFormData } from "@/lib/validations";
-import { getSkills, addSkill, updateSkill, deleteSkill } from "@/lib/firebase/firestore";
+import { getSkills, addSkill, updateSkill, deleteSkill } from "@/lib/supabase/database";
 import { SKILL_CATEGORIES, type Skill } from "@/types";
 import { toast } from "sonner";
 

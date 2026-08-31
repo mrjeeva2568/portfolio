@@ -6,7 +6,7 @@ import { Navbar } from "@/components/portfolio/navbar";
 import { Footer } from "@/components/portfolio/footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getProfile, getProjects } from "@/lib/firebase/firestore";
+import { getProfile, getProjects } from "@/lib/supabase/database";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 

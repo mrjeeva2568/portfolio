@@ -27,7 +27,7 @@ import {
   addCertification,
   updateCertification,
   deleteCertification,
-} from "@/lib/firebase/firestore";
+} from "@/lib/supabase/database";
 import type { Certification } from "@/types";
 import { toast } from "sonner";
 

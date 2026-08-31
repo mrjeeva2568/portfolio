@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { LoadingPage, LoadingSpinner } from "@/components/shared/loading-spinner";
-import { getSettings, saveSettings, getProfile, saveProfile } from "@/lib/firebase/firestore";
+import { getSettings, saveSettings, getProfile, saveProfile } from "@/lib/supabase/database";
 import type { Settings } from "@/types";
 import { toast } from "sonner";
 

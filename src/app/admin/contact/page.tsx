@@ -10,7 +10,7 @@ import { ConfirmDialog } from "@/components/shared/confirm-dialog";
 import { EmptyState } from "@/components/shared/empty-state";
 import { LoadingPage } from "@/components/shared/loading-spinner";
 import { ErrorState } from "@/components/shared/error-state";
-import { getMessages, markMessageRead, deleteMessage } from "@/lib/firebase/firestore";
+import { getMessages, markMessageRead, deleteMessage } from "@/lib/supabase/database";
 import type { ContactMessage } from "@/types";
 import { toast } from "sonner";
 

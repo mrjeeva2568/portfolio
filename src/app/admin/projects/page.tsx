@@ -26,7 +26,7 @@ import { FileUploader } from "@/components/shared/file-uploader";
 import { LoadingPage, LoadingSpinner } from "@/components/shared/loading-spinner";
 import { ErrorState } from "@/components/shared/error-state";
 import { projectSchema, type ProjectFormData } from "@/lib/validations";
-import { getProjects, addProject, updateProject, deleteProject } from "@/lib/firebase/firestore";
+import { getProjects, addProject, updateProject, deleteProject } from "@/lib/supabase/database";
 import { PROJECT_CATEGORIES, type Project } from "@/types";
 import { slugify } from "@/lib/utils";
 import { toast } from "sonner";

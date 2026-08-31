@@ -23,7 +23,7 @@ import {
   getCertifications,
   getEducation,
   getProfile,
-} from "@/lib/firebase/firestore";
+} from "@/lib/supabase/database";
 import type { Project } from "@/types";
 
 interface Stats {
